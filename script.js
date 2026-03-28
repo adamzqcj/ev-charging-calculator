@@ -9,9 +9,9 @@ const costPerKmEl = document.getElementById('costPerKm');
 const fullChargeEl = document.getElementById('fullCharge');
 
 const presets = {
-    xiaobao: { price: 0.5, range: 300, capacity: 42 },
-    tesla: { price: 0.5, range: 300, capacity: 42.2 },
-    xiaobaixuanyi: { price: 0.5, range: 600, capacity: 62.5 }
+    xiaobao: { price: 0.5, range: 300, capacity: 42.2 },
+    xiaote: { price: 0.5, range: 600, capacity: 62.5 },
+    xiaobaixuan: { price: 0.76, range: 280, capacity: 38 }
 };
 
 let isPresetSelected = false;
