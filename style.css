@@ -5,9 +5,9 @@
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, sans-serif;
-    background: #000;
-    color: #fff;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(180deg, #f5f9ff 0%, #e8f1fb 100%);
+    color: #1d1d1f;
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -22,23 +22,35 @@ body {
 
 h1 {
     text-align: center;
-    font-size: 2.2rem;
+    font-size: 2.4rem;
     font-weight: 600;
-    margin-bottom: 40px;
+    margin-bottom: 36px;
     letter-spacing: -0.02em;
+    background: linear-gradient(90deg, #0071e3, #5db8f5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .card {
-    background: rgba(255, 255, 255, 0.08);
-    border-radius: 20px;
-    padding: 28px 24px;
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: #fff;
+    border-radius: 24px;
+    padding: 32px 28px;
+    box-shadow: 0 4px 20px rgba(0, 113, 227, 0.08), 0 1px 3px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.card h2 {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #86868b;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 20px;
 }
 
 .input-group {
-    margin-bottom: 20px;
+    margin-bottom: 18px;
 }
 
 .input-group:last-child {
@@ -47,8 +59,8 @@ h1 {
 
 .input-group label {
     display: block;
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 0.85rem;
+    color: #6e6e73;
+    font-size: 0.9rem;
     margin-bottom: 8px;
     font-weight: 500;
 }
@@ -56,13 +68,13 @@ h1 {
 .input-group select,
 .input-group input {
     width: 100%;
-    padding: 16px;
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 16px 18px;
+    background: #f5f5f7;
+    border: none;
     border-radius: 12px;
-    color: #fff;
-    font-size: 1.1rem;
-    font-weight: 500;
+    color: #1d1d1f;
+    font-size: 1.05rem;
+    font-weight: 400;
     transition: all 0.3s;
     -webkit-appearance: none;
     appearance: none;
@@ -70,63 +82,74 @@ h1 {
 
 .input-group select {
     cursor: pointer;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23fff' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10z'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%236e6e73' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10z'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: right 16px center;
-    padding-right: 40px;
+    padding-right: 44px;
 }
 
 .input-group select:focus,
 .input-group input:focus {
     outline: none;
-    border-color: rgba(255, 255, 255, 0.3);
-    background: rgba(255, 255, 255, 0.1);
+    background: #e8e8ed;
 }
 
 .input-group select option {
-    background: #1c1c1e;
-    color: #fff;
+    background: #fff;
+    color: #1d1d1f;
 }
 
 .input-group input::placeholder {
-    color: rgba(255, 255, 255, 0.3);
+    color: #a1a1a6;
 }
 
 .result-grid {
     margin-top: 24px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
+    gap: 14px;
 }
 
 .result-item {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 14px;
-    padding: 20px 16px;
+    background: linear-gradient(135deg, #0071e3, #5db8f5);
+    border-radius: 16px;
+    padding: 22px 18px;
     text-align: center;
+}
+
+.result-item:nth-child(2) {
+    background: linear-gradient(135deg, #5856d6, #af52de);
+}
+
+.result-item:nth-child(3) {
+    background: linear-gradient(135deg, #00c7be, #30d158);
+}
+
+.result-item:nth-child(4) {
+    background: linear-gradient(135deg, #ff9500, #ffd60a);
 }
 
 .result-label {
     display: block;
-    color: rgba(255, 255, 255, 0.5);
-    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.7rem;
     margin-bottom: 8px;
     font-weight: 500;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.06em;
 }
 
 .result-value {
     display: block;
     color: #fff;
-    font-size: 1.6rem;
+    font-size: 1.7rem;
     font-weight: 600;
     letter-spacing: -0.02em;
 }
 
 .result-unit {
-    color: rgba(255, 255, 255, 0.4);
-    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.65rem;
     margin-left: 2px;
 }
 
@@ -134,34 +157,39 @@ h1 {
     body {
         padding: 16px;
         align-items: flex-start;
-        padding-top: 60px;
+        padding-top: 50px;
     }
 
     h1 {
-        font-size: 1.8rem;
-        margin-bottom: 32px;
+        font-size: 2rem;
+        margin-bottom: 28px;
     }
 
     .card {
         padding: 24px 20px;
-        border-radius: 18px;
+        border-radius: 20px;
     }
 
     .input-group input,
     .input-group select {
-        padding: 14px;
+        padding: 14px 16px;
         font-size: 1rem;
     }
 
     .result-grid {
-        gap: 10px;
+        gap: 12px;
     }
 
     .result-item {
-        padding: 16px 12px;
+        padding: 18px 14px;
+        border-radius: 14px;
     }
 
     .result-value {
-        font-size: 1.4rem;
+        font-size: 1.5rem;
+    }
+
+    .result-label {
+        font-size: 0.65rem;
     }
 }
