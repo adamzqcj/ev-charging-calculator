@@ -12,7 +12,8 @@ const kmPerKwhEl = document.getElementById('kmPerKwh');
 const presets = {
     xiaobao: { price: 0.5, range: 300, capacity: 42.2 },
     xiaote: { price: 0.5, range: 435, capacity: 62.5 },
-    xiaobaixuan: { price: 0.76, range: 280, capacity: 38 }
+    xiaobaixuan: { price: 0.76, range: 280, capacity: 38 },
+    ix3: { price: 0.3, range: 530, capacity: 80 }
 };
 
 let isPresetSelected = false;
