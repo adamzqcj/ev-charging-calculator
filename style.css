@@ -5,42 +5,40 @@
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, sans-serif;
+    background: #000;
+    color: #fff;
     min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 20px;
 }
 
 .container {
-    max-width: 600px;
-    margin: 0 auto;
+    width: 100%;
+    max-width: 380px;
 }
 
 h1 {
     text-align: center;
-    color: #fff;
-    margin-bottom: 30px;
-    font-size: 1.8rem;
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin-bottom: 40px;
+    letter-spacing: -0.02em;
 }
 
 .card {
-    background: #fff;
-    border-radius: 16px;
-    padding: 24px;
-    margin-bottom: 20px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
-}
-
-.card h2 {
-    color: #333;
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-    padding-bottom: 12px;
-    border-bottom: 2px solid #f0f0f0;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 28px 24px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .input-group {
-    margin-bottom: 16px;
+    margin-bottom: 20px;
 }
 
 .input-group:last-child {
@@ -49,96 +47,114 @@ h1 {
 
 .input-group label {
     display: block;
-    color: #666;
-    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.85rem;
     margin-bottom: 8px;
+    font-weight: 500;
 }
 
-.input-group input,
-.input-group select {
+.input-group select,
+.input-group input {
     width: 100%;
-    padding: 14px 16px;
-    border: 2px solid #e0e0e0;
-    border-radius: 10px;
-    font-size: 1rem;
-    transition: border-color 0.3s;
-}
-
-.input-group input:focus,
-.input-group select:focus {
-    outline: none;
-    border-color: #667eea;
+    padding: 16px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: all 0.3s;
+    -webkit-appearance: none;
+    appearance: none;
 }
 
 .input-group select {
-    background: #fff;
     cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23fff' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    padding-right: 40px;
+}
+
+.input-group select:focus,
+.input-group input:focus {
+    outline: none;
+    border-color: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.input-group select option {
+    background: #1c1c1e;
+    color: #fff;
+}
+
+.input-group input::placeholder {
+    color: rgba(255, 255, 255, 0.3);
 }
 
 .result-grid {
+    margin-top: 24px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
+    gap: 12px;
 }
 
 .result-item {
-    background: #f8f9fa;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 14px;
     padding: 20px 16px;
-    border-radius: 12px;
     text-align: center;
-    transition: transform 0.2s;
-}
-
-.result-item:hover {
-    transform: translateY(-2px);
 }
 
 .result-label {
     display: block;
-    color: #888;
-    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.75rem;
     margin-bottom: 8px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
 .result-value {
     display: block;
-    color: #667eea;
+    color: #fff;
     font-size: 1.6rem;
-    font-weight: 700;
-    margin-bottom: 4px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
 }
 
 .result-unit {
-    color: #999;
-    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 0.7rem;
+    margin-left: 2px;
 }
 
 @media (max-width: 480px) {
     body {
-        padding: 12px;
+        padding: 16px;
+        align-items: flex-start;
+        padding-top: 60px;
     }
 
     h1 {
-        font-size: 1.5rem;
-        margin-bottom: 20px;
+        font-size: 1.8rem;
+        margin-bottom: 32px;
     }
 
     .card {
-        padding: 18px;
-        border-radius: 12px;
+        padding: 24px 20px;
+        border-radius: 18px;
     }
 
-    .card h2 {
-        font-size: 1rem;
-    }
-
-    .input-group input {
-        padding: 12px 14px;
+    .input-group input,
+    .input-group select {
+        padding: 14px;
         font-size: 1rem;
     }
 
     .result-grid {
-        gap: 12px;
+        gap: 10px;
     }
 
     .result-item {
@@ -146,6 +162,6 @@ h1 {
     }
 
     .result-value {
-        font-size: 1.3rem;
+        font-size: 1.4rem;
     }
 }
