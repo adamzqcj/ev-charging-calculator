@@ -1,3 +1,4 @@
+const presetSelect = document.getElementById('preset');
 const priceInput = document.getElementById('price');
 const rangeInput = document.getElementById('range');
 const capacityInput = document.getElementById('capacity');
@@ -6,6 +7,14 @@ const consumptionEl = document.getElementById('consumption');
 const costPerHundredEl = document.getElementById('costPerHundred');
 const costPerKmEl = document.getElementById('costPerKm');
 const fullChargeEl = document.getElementById('fullCharge');
+
+const presets = {
+    xiaobao: { price: 0.5, range: 300, capacity: 42 },
+    tesla: { price: 0.5, range: 300, capacity: 42.2 },
+    xiaobaixuanyi: { price: 0.5, range: 600, capacity: 62.5 }
+};
+
+let isPresetSelected = false;
 
 function calculate() {
     const price = parseFloat(priceInput.value);
@@ -30,6 +39,22 @@ function calculate() {
     costPerKmEl.textContent = costPerKm.toFixed(3);
     fullChargeEl.textContent = fullCharge.toFixed(2);
 }
+
+function applyPreset(preset) {
+    if (preset && presets[preset]) {
+        isPresetSelected = true;
+        priceInput.value = presets[preset].price;
+        rangeInput.value = presets[preset].range;
+        capacityInput.value = presets[preset].capacity;
+        calculate();
+    } else {
+        isPresetSelected = false;
+    }
+}
+
+presetSelect.addEventListener('change', (e) => {
+    applyPreset(e.target.value);
+});
 
 priceInput.addEventListener('input', calculate);
 rangeInput.addEventListener('input', calculate);
