@@ -129,6 +129,14 @@ h1 {
     background: linear-gradient(135deg, #ff9500, #ffd60a);
 }
 
+.result-item:nth-child(5) {
+    background: linear-gradient(135deg, #ff375f, #ff6b6b);
+}
+
+.result-grid {
+    grid-template-columns: repeat(3, 1fr);
+}
+
 .result-label {
     display: block;
     color: rgba(255, 255, 255, 0.8);
